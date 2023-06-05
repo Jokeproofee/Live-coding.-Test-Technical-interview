@@ -1,17 +1,25 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        //Практическая задача билета №10: Дан массив пар названий книг и авторов. Необходимо привести каждую пару в строку вида: "Название книги" Имя Отчество Фамилия автора.
+        System.out.println("Практическая задача билета №10:");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        Map<String,String> books = new HashMap<>();
+        books.put("Война и мир","Лев Николаевич Толстой");
+        books.put("Преступление и наказание","Фёдор Михайлович Достоевский");
+        books.put("Отцы и дети","Иван Сергеевич Тургенев");
+
+        List<String> stringList = new ArrayList<>();
+        for (Map.Entry<String, String> entry : books.entrySet()) {
+            stringList.add("Название книги: " + entry.getKey() + " Автор: " + entry.getValue());
+        }
+        for (String s : stringList) {
+            System.out.println(s);
         }
     }
 }
